@@ -99,26 +99,56 @@
 							</a>
 						</div>
 					</svelte:fragment>
-					<svelte:fragment slot="content"
-						><ul class="space-y-2">
-							{#if item.navItems}
-								{#each item.navItems as subItem (subItem.path)}
-									<li>
-										<a
-											on:click={drawerStore.close}
-											href={subItem.path}
-											class="font-normal px-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block hover:text-primary-500 dark:hover:text-surface-100"
-										>
-											<span>{subItem.label}</span>
-											<span
-												class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
-											></span>
-										</a>
-									</li>
-								{/each}
-							{/if}
-						</ul></svelte:fragment
-					>
+					<svelte:fragment slot="content">
+						<nav class="divide-y-2">
+							<ul>
+								<li>
+									<a
+										on:click={drawerStore.close}
+										href="/"
+										class="font-normal px-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block hover:text-primary-500 dark:hover:text-surface-100"
+									>
+										<span>Committee</span>
+										<span
+											class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
+										></span>
+									</a>
+								</li>
+							</ul>
+							<ul>
+								{#if item.navItems}
+									{#each item.navItems as subItem (subItem.path)}
+										<li class="py-1">
+											<a
+												on:click={drawerStore.close}
+												href={subItem.path}
+												class="font-normal px-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block hover:text-primary-500 dark:hover:text-surface-100"
+											>
+												<span>{subItem.label}</span>
+												<span
+													class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
+												></span>
+											</a>
+										</li>
+									{/each}
+								{/if}
+							</ul>
+							<ul>
+								<li>
+									<a
+										on:click={drawerStore.close}
+										href="/"
+										class="font-normal px-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block hover:text-primary-500 dark:hover:text-surface-100"
+									>
+										<span>DCAC</span>
+										<span
+											class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
+										></span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</svelte:fragment>
 				</AccordionItem>
 			{/each}
 			{#if $page.data.html}

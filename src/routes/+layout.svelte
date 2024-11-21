@@ -161,8 +161,21 @@
 					{#each $navStore as item (item.header)}
 						<NavBarDropdown navHeader={item}>
 							<nav
-								class="card shadow-lg rounded-lg w-60 overflow-hidden bg-slate-50 dark:bg-surface-800"
+								class="card divide-y-2 shadow-lg rounded-lg w-60 overflow-hidden bg-slate-50 dark:bg-surface-800"
 							>
+								<ul>
+									<li>
+										<a
+											href="https://google.com"
+											class="font-normal px-4 py-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block text-sm hover:text-primary-500 dark:hover:text-surface-100"
+										>
+											<span>Google</span>
+											<span
+												class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
+											></span>
+										</a>
+									</li>
+								</ul>
 								<ul>
 									{#if item.navItems}
 										{#each item.navItems as subItem (subItem.path)}
@@ -181,6 +194,19 @@
 											</li>
 										{/each}
 									{/if}
+								</ul>
+								<ul>
+									<li>
+										<a
+											href="https://google.com"
+											class="font-normal px-4 py-2 focus:variant-soft-primary dark:focus:variant-soft-surface group transition duration-300 block text-sm hover:text-primary-500 dark:hover:text-surface-100"
+										>
+											<span>Google</span>
+											<span
+												class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-primary-500 dark:bg-surface-100"
+											></span>
+										</a>
+									</li>
 								</ul>
 							</nav>
 						</NavBarDropdown>
